@@ -1,0 +1,43 @@
+.sidenav {
+    margin: 0;
+    padding: 0;
+    width: 200px;
+    background-color: #1c013d;
+    position: absolute;
+    height: 100%;
+    overflow: auto;
+  }
+  
+  .sidenav a {
+    display: block;
+    color: rgb(252, 250, 155);
+    padding: 16px;
+    text-decoration: none;
+  }
+  
+  .sidenav a.active {
+    background-color: #ffe600;
+    color: #1c013d;
+    font-weight: bold;
+  }
+  
+  .sidenav a:hover:not(.active) {
+    background-color: #ffe600;
+    color: #1c013d;
+    font-weight: bold;
+  }
+    
+  /* Cambiar a barra superior al reducir por debajo de 768px*/
+  @media screen and (max-width: 768px) {
+    .sidenav {
+      width: 100%;
+      height: auto;
+      position: relative;
+    }
+    .sidenav a {
+      float: left;
+      width: fit-content;
+    }
+
+  }
+  

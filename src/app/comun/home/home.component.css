@@ -1,0 +1,25 @@
+body{
+    background: url(./../../../assets/img/fondo2.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    }
+
+    img{
+        margin-top: 20%;
+    }
+  
+  /* Definimos el tamaño y la posición de bloque central*/
+  section.container_size {
+    filter: brightness(1.3);
+    width: 350px;
+  }
+
+  /*Añadimos a la clase constructora de las filas el centrado de todo el contenido, 
+  tanto texto como resto de elementos*/
+  div.row {
+    justify-content: center;
+    text-align: center;
+  }
+  

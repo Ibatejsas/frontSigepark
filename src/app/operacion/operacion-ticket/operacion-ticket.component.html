@@ -1,0 +1,143 @@
+<body>
+  <div class="row">  </div>
+    <div class="container-fluid mt-4">
+      <p class="capacidadText">Plazas {{ plazasOcupadas }}/{{ plazasTotales }}</p>
+      <div class="row justify-content-center">
+        <div class="col-auto mb-3">
+          <div class="card">
+            <div class="card-body">
+              <p class="tituloTextCard">ENTRADA</p>
+              <div class="container">
+                <form [formGroup]="newTicketForm" (ngSubmit)="crearTicket()">
+                  <label>
+                    <p class="TextCard">Inserte matrícula</p>
+                    <input class="form-control form-control-dark" placeholder="Matricula" 
+                    type="text" formControlName="matricula" required>
+                  </label>
+                  <button 
+                  class="btn btn-warning" 
+                  type="submit" [disabled]="!newTicketForm.valid"
+                  >Entrar</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+    
+
+      <div class="col-auto mb-3">
+        <div class="card">
+          <div class="card-body">
+            <p class="tituloTextCard">SALIDA</p>
+            <div class="container">
+              <form [formGroup]="payTicketForm" (ngSubmit)="pagarTicket()">
+                <label>
+                  <p class="TextCard">Inserte numero de Ticket</p>
+                  <input class="form-control form-control-dark" placeholder="Ticket" 
+                  type="text" formControlName="numeroTicket" required>
+                </label>
+                <button 
+                class="btn btn-warning" 
+                type="submit" [disabled]="!payTicketForm.valid"
+                >Entrar</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--Modales asociados a la primera tarjeta -->
+
+  <!-- Modal emergente -->
+  <div class="modal fade" id="modalTicket" aria-hidden="true">
+    <div  class="modal-dialog modal-sm">
+      <div *ngIf="ticket && tarifa" class="modal-content">
+        <div class="modal-header">
+          <h6 class="modal-title">
+            IMPRIMIR TICKET
+          </h6>
+        </div>
+        <div class="row modal-body">
+          <div class="container col-md-6 mb-3">
+            <label>Matricula</label>
+            <p>{{ ticket.matricula }}</p>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label>Nº Ticket</label>
+            <p>{{ ticket.id }}</p>
+          </div>
+          <div class="container col-md-6 mb-3">
+            <label>Hora Entrada</label>
+            <p>{{ ticket.entrada }}</p>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label>Tarifa</label>
+            <p>{{ tarifa.factor }} / {{ factorTiempo }}</p>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-warning" data-dismiss="modal">
+            Aceptar
+          </button>
+          <button type="button" class="btn btn-warning" data-dismiss="modal">
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Cerramos el modal -->
+
+  <!-- Modal emergente de la receta, texto descriptivo emergente, tomamos el id "ModalCard1Receta" para referenciarlo en los botones -->
+  <div class="modal fade" id="modalFactura" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+      <div *ngIf="showFactura"  class="modal-content">
+        <div class="modal-header">
+          <h6 class="modal-title">
+            IMPRIMIR FACTURA
+          </h6>
+        </div>
+        <div class="row modal-body">
+          <div class="container col-md-6 mb-3">
+            <label>Matricula</label>
+            <p>{{ ticket.matricula }}</p>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label>Plaza</label>
+            <p>pendiente</p>
+          </div>
+          <div class="container col-md-6 mb-3">
+            <label>Hora Entrada</label>
+            <p>{{ ticket.entrada }}</p>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label>Tarifa</label>
+            <p>{{ tarifa.factor }} / {{ factorTiempo }}</p>
+          </div>
+          <div class="container col-md-6 mb-3">
+            <label>Hora de Salida</label>
+            <p>{{ ticket.salida }}</p>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label>Importe</label>
+            <p>{{ importe }}</p>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-warning" data-dismiss="modal">
+            Aceptar
+          </button>
+          <button type="button" class="btn btn-warning" data-dismiss="modal">
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Cerramos el modal -->
+
+</body>
+
+  
