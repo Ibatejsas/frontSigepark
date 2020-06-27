@@ -6,14 +6,14 @@ body{
     background-size: cover;
     }
 
-    img{
-        margin-top: 20%;
-    }
+img{
+  margin-top: 10%;
+  }
   
   /* Definimos el tamaño y la posición de bloque central*/
-  section.container_size {
-    filter: brightness(1.3);
-    width: 350px;
+section.container_size {
+  filter: brightness(1.3);
+  width: 350px;
   }
 
   /*Añadimos a la clase constructora de las filas el centrado de todo el contenido, 

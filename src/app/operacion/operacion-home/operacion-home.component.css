@@ -17,8 +17,9 @@ body{
   margin-top: 1%;
 }
 
-.container-fluid{
-  max-width: 70%;
+div.row {
+  justify-content: center;
+  text-align: center;
 }
 
 p.tituloText {

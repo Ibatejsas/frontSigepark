@@ -11,7 +11,7 @@ export class OperacionHomeComponent implements OnInit {
 
   constructor() { }
 
-  //llamamos a plazas totales y plazas ocupadas
+ 
   ngOnInit(): void {
 
   }

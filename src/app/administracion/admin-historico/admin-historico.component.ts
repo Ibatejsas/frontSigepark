@@ -1,16 +1,14 @@
-import { Ticket } from './../../modelo/ticket';
 import { Component, OnInit } from '@angular/core';
-import { Validators, FormBuilder } from '@angular/forms';
 import { TicketsApiService } from 'src/app/servicios/ticket-api.service';
-import { PlazaApiService } from 'src/app/servicios/plaza-api.service';
-
+import { Ticket } from './../../modelo/ticket';
 
 @Component({
-  selector: 'app-operacion-lista',
-  templateUrl: './operacion-lista.component.html',
-  styleUrls: ['./operacion-lista.component.css']
+  selector: 'app-admin-historico',
+  templateUrl: './admin-historico.component.html',
+  styleUrls: ['./admin-historico.component.css']
 })
-export class OperacionListaComponent implements OnInit {
+export class AdminHistoricoComponent implements OnInit {
+
 
   config: any;
   collection = { count: 10, data: [] };
@@ -23,9 +21,14 @@ export class OperacionListaComponent implements OnInit {
   tickets: Ticket[]=[];
   selectedTicket:Ticket;
 
-  ngOnInit(): void{
 
-    this.ticketsApiService.getTickets().subscribe(
+
+
+
+  ngOnInit(): void {
+
+
+     this.ticketsApiService.getTickets().subscribe(
       (response)=>
       {
         this.tickets = response;
@@ -60,7 +63,3 @@ export class OperacionListaComponent implements OnInit {
 
 
   }
-
-
-  
-

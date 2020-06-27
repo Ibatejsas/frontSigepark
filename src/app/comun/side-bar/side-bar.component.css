@@ -27,8 +27,8 @@
     font-weight: bold;
   }
     
-  /* Cambiar a barra superior al reducir por debajo de 768px*/
-  @media screen and (max-width: 768px) {
+  /* Cambiar a barra superior al reducir por debajo de 1024px*/
+  @media screen and (max-width: 1024px) {
     .sidenav {
       width: 100%;
       height: auto;

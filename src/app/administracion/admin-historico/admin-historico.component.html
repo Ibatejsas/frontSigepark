@@ -1,0 +1,179 @@
+<body>
+    <div class="row"></div>
+    <div class="container-fluid mt-4">
+      <p class="tituloText">OPERACIÓN</p>
+      <div class="row justify-content-center">
+        <div class="col-auto mb-3">
+          <div class="card">
+            <div class="card-body">
+              <p class="tituloTextCard">Vehiculos en Parking</p>
+              <div class="container">
+                <button class="btn btn-warning" data-toggle="modal" data-target="#modalTicketList2">
+                  OPERAR
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <div class="col-auto mb-3">
+          <div class="card">
+            <div class="card-body">
+              <p class="tituloTextCard">OCUPACIÓN</p>
+              <div class="container">
+                <button class="btn btn-warning" data-toggle="modal" data-target="#modalTicketList">
+                  OPERAR
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+  
+  
+  
+   <!--Modales asociados a la primera tarjeta -->
+  
+            <!-- Modal emergente de la receta, texto descriptivo emergente, tomamos el id "ModalCard1Receta" para referenciarlo en los botones -->
+            <div class="modal fade" id="modalTicketList" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h6 class="modal-title" >
+                      LISTA DE VEHICULOS EN EL PARKING
+                    </h6>
+                  </div>
+                  <div class="row modal-body">
+                    <table id="tickets">
+                      <tr>
+                        <th *ngFor="let col of columns">
+                          {{col}}
+                        </th>
+                      </tr>
+                      <tr *ngFor="let ticket of tickets">
+                        <td *ngFor="let col of index">
+                          {{ticket[col]}}
+                        </td>
+                      </tr></table>
+                  </div>
+                  <div class="modal-footer">
+                    
+                    <button
+                      type="button"
+                      class="btn btn-warning"
+                      data-dismiss="modal"
+                    >
+                      Close
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Cerramos el modal -->
+  
+            <!-- Modal emergente de la receta, texto descriptivo emergente, tomamos el id "ModalCard1Receta" para referenciarlo en los botones -->
+            <div class="modal fade" id="modalTicketList2" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h6 class="modal-title" >
+                      LISTA DE VEHICULOS EN EL PARKING
+                    </h6>
+                  </div>
+                  <div class="row modal-body">
+                    <table id="tickets">
+                      <tr>
+                        <th *ngFor="let col of columns">
+                          {{col}}
+                        </th>
+                      </tr>
+                      <tr *ngFor="let ticket of ticketsNoPagados">
+                        <td *ngFor="let col of index">
+                          {{ticket[col]}}
+                        </td>
+                      </tr></table>
+                  </div>
+                  <div class="modal-footer">
+                    
+                    <button
+                      type="button"
+                      class="btn btn-warning"
+                      data-dismiss="modal"
+                    >
+                      Close
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Cerramos el modal -->
+  
+  
+            <!-- Modal emergente de la receta, texto descriptivo emergente, tomamos el id "ModalCard1Receta" para referenciarlo en los botones -->
+            <div class="modal fade" id="modalTicketList3" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h6 class="modal-title" >
+                      LISTA DE VEHICULOS EN EL PARKING
+                    </h6>
+                  </div>
+                  <div class="row modal-body">
+                  
+                    <h2>My Tickets</h2>
+                    <ul class="tickets">
+                      <li *ngFor="let ticket of tickets| slice:0:5;  let i=index"
+                        [class.selected]="ticket === selectedTicket"
+                        (click)="onSelect(ticket)">
+                        <span class="badge">{{ticket.id}}</span> {{ticket.matricula}}
+                      </li>
+                    </ul>
+                    
+                    <div *ngIf="selectedTicket">
+                    
+                      <h2>{{selectedTicket.matricula | uppercase}} Details</h2>
+                      <div><span>id: </span>{{selectedTicket.id}}</div>
+                      <div>
+                        <label>matricula:
+                          <input [(ngModel)]="selectedTicket.matricula placeholder="matricula"/>
+                        </label>
+                      </div>
+                 
+                    </div>
+                  </div>
+                  <div class="modal-footer">
+                    
+                    <button
+                      type="button"
+                      class="btn btn-warning"
+                      data-dismiss="modal"
+                    >
+                      Close
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Cerramos el modal -->
+  
+      </div>
+    </div>
+  </body>
+  
+  
+  
+  <!--
+  <table id="tickets">
+    <tr>
+      <th *ngFor="let col of columns">
+        {{col}}
+      </th>
+    </tr>
+    <tr *ngFor="let ticket of tickets">
+      <td *ngFor="let col of index">
+        {{ticket[col]}}
+      </td>
+    </tr></table>
+  
+  
+  -->

@@ -40,9 +40,6 @@ export class OperacionTicketComponent implements OnInit {
 
   //llamamos a plazas totales y plazas ocupadas
   ngOnInit(): void {
-    //this.plazasApiService.getSharedMessage().subscribe(plazasTotales => this.plazasTotales = plazasTotales);
-    //this.ticketApiService.getSharedMessageOcupadas().subscribe(plazasOcupadas => this.plazasOcupadas = plazasOcupadas);
-
     this.setPlazasTotales();
     this.setPlazasOcupadas();
   }
@@ -63,6 +60,7 @@ export class OperacionTicketComponent implements OnInit {
               this.tarifa = tarifa;
               this.factorTiempo = this.tarifa.factorTiempo.toLowerCase();
               $('#modalTicket').modal('show');
+              this.newTicketForm.reset();
             });
         },
         (error) => {
@@ -88,6 +86,7 @@ export class OperacionTicketComponent implements OnInit {
             this.factorTiempo = this.tarifa.factorTiempo.toLowerCase();
             this.showFactura = true;
             $('#modalFactura').modal('show');
+            this.payTicketForm.reset();
           });
       });
   }

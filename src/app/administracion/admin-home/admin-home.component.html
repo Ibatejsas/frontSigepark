@@ -1,29 +1,30 @@
 <body>
   <div class="row"></div>
   <div class="container-fluid mt-4">
-    <p class="capacidadText">Plazas {{ plazasTotales }}</p>
+    <p class="tituloText">ADMIN</p>
     <div class="row justify-content-center">
       <div class="col-auto mb-3">
         <div class="card">
           <div class="card-body">
-            <p class="tituloTextCard">AÑADIR PLAZA</p>
+            <p class="tituloTextCard">GESTION DE PLAZAS</p>
             <div class="container">
-              <button class="btn btn-warning" (click)="addPlaza()">
-                AÑADIR PLAZA
-              </button>
+              <a routerLink="plazas" >
+              <button class="btn btn-warning">
+                MODIFICAR
+              </button></a>
             </div>
           </div>
         </div>
       </div>
-
       <div class="col-auto mb-3">
         <div class="card">
           <div class="card-body">
-            <p class="tituloTextCard">QUITAR PLAZA</p>
+            <p class="tituloTextCard">HISTÓRICOS</p>
             <div class="container">
-              <button class="btn btn-warning" (click)="delPlaza()">
-                QUITAR PLAZA
-              </button>
+              <a routerLink="historico" >
+              <button class="btn btn-warning">
+                VER HISTÓRICO
+              </button></a>
             </div>
           </div>
         </div>

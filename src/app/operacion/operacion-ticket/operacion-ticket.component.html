@@ -1,7 +1,7 @@
 <body>
   <div class="row">  </div>
     <div class="container-fluid mt-4">
-      <p class="capacidadText">Plazas {{ plazasOcupadas }}/{{ plazasTotales }}</p>
+      <p class="tituloText">Plazas {{ plazasOcupadas }}/{{ plazasTotales }}</p>
       <div class="row justify-content-center">
         <div class="col-auto mb-3">
           <div class="card">
@@ -9,11 +9,8 @@
               <p class="tituloTextCard">ENTRADA</p>
               <div class="container">
                 <form [formGroup]="newTicketForm" (ngSubmit)="crearTicket()">
-                  <label>
-                    <p class="TextCard">Inserte matrícula</p>
                     <input class="form-control form-control-dark" placeholder="Matricula" 
-                    type="text" formControlName="matricula" required>
-                  </label>
+                    type="text" formControlName="matricula" required><br>
                   <button 
                   class="btn btn-warning" 
                   type="submit" [disabled]="!newTicketForm.valid"
@@ -31,11 +28,8 @@
             <p class="tituloTextCard">SALIDA</p>
             <div class="container">
               <form [formGroup]="payTicketForm" (ngSubmit)="pagarTicket()">
-                <label>
-                  <p class="TextCard">Inserte numero de Ticket</p>
                   <input class="form-control form-control-dark" placeholder="Ticket" 
-                  type="text" formControlName="numeroTicket" required>
-                </label>
+                  type="text" formControlName="numeroTicket" required><br>
                 <button 
                 class="btn btn-warning" 
                 type="submit" [disabled]="!payTicketForm.valid"
@@ -81,9 +75,6 @@
           <button type="button" class="btn btn-warning" data-dismiss="modal">
             Aceptar
           </button>
-          <button type="button" class="btn btn-warning" data-dismiss="modal">
-            Close
-          </button>
         </div>
       </div>
     </div>
@@ -128,9 +119,6 @@
         <div class="modal-footer">
           <button type="button" class="btn btn-warning" data-dismiss="modal">
             Aceptar
-          </button>
-          <button type="button" class="btn btn-warning" data-dismiss="modal">
-            Close
           </button>
         </div>
       </div>

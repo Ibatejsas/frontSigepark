@@ -1,0 +1,37 @@
+<body>
+    <div class="row"></div>
+    <div class="container-fluid mt-4">
+      <p class="tituloText">Plazas {{ plazasOcupadas }}/{{ plazasTotales }}</p>
+      <div class="row justify-content-center">
+        <div class="col-auto mb-3">
+          <div class="card">
+            <div class="card-body">
+              <p class="tituloTextCard">AÑADIR PLAZA</p>
+              <div class="container">
+                <button class="btn btn-warning" (click)="addPlaza()">
+                  AÑADIR PLAZA
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <div class="col-auto mb-3">
+          <div class="card">
+            <div class="card-body">
+              <p class="tituloTextCard">QUITAR PLAZA</p>
+              <div class="container">
+                <button class="btn btn-warning" (click)="delPlaza()">
+                  QUITAR PLAZA
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+    </div>
+  </body>
